@@ -26,12 +26,6 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    pip install pytest pytest-azurepipelines
-    pip install pytest-cov
-    pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+    pip install pytest pytest-azurepipelines pytest-cov
+    pytest . --cov cdp_test_harness --cov-report html
   displayName: 'pytest'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/test-*.xml' 
