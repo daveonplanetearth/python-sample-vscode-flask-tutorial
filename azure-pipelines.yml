@@ -27,5 +27,5 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines pytest-cov
-    pytest . --cov cdp_test_harness --cov-report html
+    pytest . --cov . --cov-report html
   displayName: 'pytest'
